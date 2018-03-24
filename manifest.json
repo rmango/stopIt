@@ -1,0 +1,6 @@
+{
+    "name": "stopIt",
+    "version": "1.0",
+    "description": "Blocks websites that you blacklist, and then suggests other things to do.",
+    "manifest_version": 2
+  }
