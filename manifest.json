@@ -11,7 +11,8 @@
         "scripts": [
             "siteData.json",
             "background.js",
-            "content.js"
+            "content.js",
+            "getWindowsInfo.js"
         ]
     },
     "content_scripts": [
