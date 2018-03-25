@@ -42,6 +42,28 @@ document.getElementById("alarmButton").onclick = function() {
         "startTime": secStart,
         "endTime": secEnd
     }
-    siteData.push(toEnter);
+    var data;
+    fetch(chrome.extension.getURL('/siteData.json'))
+     .then((resp) => resp.json())
+     .then(function (jsonData) {
+         jsonData.push(toEnter);
+         console.log(jsonData);
+         data = jsonData;
+     });
+    
+    /*console.log(JSON.stringify(chrome.extension.getURL('/siteData.json')));
+    var siteData = JSON.parse(chrome.extension.getURL('/siteData.json'));
+    //siteData.push(toEnter);
+    console.log(JSON.stringify(chrome.extension.getURL('/siteData.json')));
+*/
+
+// Save it using the Chrome extension storage API.
+var value = data;
+chrome.storage.local.set({key: value}, function() {
+    console.log('Value is set to ' + value);
+  });
+  chrome.storage.local.get(['key'], function(result) {
+    console.log('Value currently is ' + result.key);
+  });
 }
 

@@ -1,4 +1,5 @@
 document.getElementById('test').textContent = "test";
+
 fetch(chrome.extension.getURL('/siteData.json'))
      .then((resp) => resp.json())
      .then(function (jsonData) {
@@ -11,6 +12,8 @@ fetch(chrome.extension.getURL('/siteData.json'))
             console.log("element created");
         }
         //add 
+
+
     });
 
     
