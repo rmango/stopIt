@@ -1,3 +1,8 @@
 var currentURL = location.href;
 console.log(currentURL);
-console.log(siteData);
+fetch(chrome.extension.getURL('/siteData.json'))
+     .then((resp) => resp.json())
+     .then(function (jsonData) {
+         console.log(jsonData)
+     });
+
