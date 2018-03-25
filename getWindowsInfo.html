@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+
+<html lang = "en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>testing information</title>
+</head>   
+
+<body>
+    <input type= "text" placeholder="example.com">
+    
+    <input type="time" id="alarmTimeStart" />
+    <input type="time" id="alarmTimeEnd">
+    
+    <button onclick="setAlarm(this);" id = "alarmButton">Set Time</button>
+    <script>
+        function setAlarm() {
+        var msStart = document.getElementById('alarmTimeStart').valueAsNumber;
+        var msEnd = document.getElementById('alarmTimeEnd').valueAsNumber;
+        var msNow = Date.now();
+        console.log(msStart);
+        console.log(msEnd);
+        
+        if(isNaN(msStart) || isNan(msEnd)) {
+            alert('Error: Perhaps no input?');
+            return;
+        }
+        
+        if(msStart == msNow){
+            var alarmStart = new Date(msStart);
+            var alarmEnd = new Date(msEnd);
+            var alarmTimeStart = new Date(alarmStart.getUTCHours(), alarmStart.getUTCMinutes(), alarmStart.getUTCSeconds);
+            var alarmTimeEnd = new Date(alarmEnd.getUTCHours(), alarmEnd.getUTCMinutes(), alarmEnd.getUTCSeconds);
+            var differenceInMs = alarmTimeStart.getTime() - alarmTimeEnd.getTime();
+        
+            if(differenceInMs < 0){
+                alert('Done dude');
+                return;
+            }
+        
+        }
+        
+    }
+    </script>
+
+    
+</body>
