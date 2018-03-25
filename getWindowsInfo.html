@@ -1,48 +1,49 @@
 <!DOCTYPE HTML>
 
-<html lang = "en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>testing information</title>
-</head>   
+</head>
 
 <body>
-    <input type= "text" placeholder="example.com">
-    
+    <input type="text" placeholder="example.com">
+
     <input type="time" id="alarmTimeStart" />
     <input type="time" id="alarmTimeEnd" />
-    
-    <button onclick="setAlarm(this);" id = "alarmButton">Set Time</button>
+
+    <button onclick="setAlarm(this);" id="alarmButton">Set Time</button>
     <script>
         function setAlarm() {
-        var msStart = document.getElementById('alarmTimeStart').valueAsNumber;
-        var msEnd = document.getElementById('alarmTimeEnd').valueAsNumber;
-        var msNow = new Date();
-        var msTime = msNow.getTime();
+            //get start and end times
+            var msStart = document.getElementById('alarmTimeStart').valueAsNumber;
+            var msEnd = document.getElementById('alarmTimeEnd').valueAsNumber;
+            var msNow = new Date();
+            var msTime = msNow.getTime();
 
-        secTime = parseInt(msTime/1000);
-        secStart = parseInt(msStart/1000);
-        secEnd = parseInt(msEnd/1000);
+            secTime = parseInt(msTime / 1000);
+            secStart = parseInt(msStart / 1000);
+            secEnd = parseInt(msEnd / 1000);
 
-        window.setInterval(
-        function () {
-            secTime = secTime + 1;
-            document.getElementById("secTimes").innerHTML = "You have " + secTime + " ms";
-            if(secTime > secStart && secTime < secEnd){
-                document.getElementById("secTimes").innerHTML = "stop";
-            }
-        }, 1000);
-        
-        console.log(secTime)
-        console.log(secStart)
-        console.log(secEnd)
+            window.setInterval(
+                function () {
+                    secTime = secTime + 1;
+                    document.getElementById("secTimes").innerHTML = "You have " + secTime + " ms";
+                    if (secTime > secStart && secTime < secEnd) {
+                        document.getElementById("secTimes").innerHTML = "stop";
+                    }
+                }, 1000);
+
+            console.log(secTime);
+            console.log(secStart);
+            console.log(secEnd);
         }
-        
+
     </script>
 
     <div id="secTimes"></div>
-    
+
 </body>

@@ -8,14 +8,20 @@
 </head>
 
 <body>  
-       
-  
     <h1>Control Panel</h1>
     <div id="list">
         <div>This is the list</div>
         <div>Add something to the list</div>
         <div id="test">Hi</div>
     </div>
+    <input id="urlEntry" type= "text" placeholder="example.com">
+    
+    <input type="time" id="alarmTimeStart" />
+    <input type="time" id="alarmTimeEnd" />
+    <button id = "alarmButton">Set Time</button>
+    <div id="secTimes"></div>
+
+    <script src="getWindowsInfo.js"></script>
     <script src="siteData.json"></script>
     <script src="background.js"></script>
 </body>
