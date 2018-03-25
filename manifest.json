@@ -12,7 +12,8 @@
             "siteData.json",
             "background.js",
             "content.js",
-            "getWindowsInfo.js"
+            "getWindowsInfo.js",
+            "popup.css"
         ]
     },
     "content_scripts": [

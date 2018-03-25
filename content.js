@@ -1,5 +1,12 @@
 var currentURL = location.href;
 console.log(currentURL);
+
+/*var list = document.createElement("DIV");
+list.textContent = "yello";
+list.setAttribute("background", blue);
+list.setAttribute("top", 0);
+list.setAttribute("position", "fixed");
+document.body.appendChild(list);*/
 var value = [
     {
         "url": "https://www.instagram.com/",
@@ -41,7 +48,7 @@ fetch(chrome.extension.getURL('/siteData.json'))
         }
         //if url match found, block site
         var msNow = new Date();
-        if(matchFound && j.startTime <= parseInt(msNow.getTime())/1000 && j.endTime >=x parseInt(msNow.getTime()/1000)){
+        if(matchFound && j.startTime <= parseInt(msNow.getTime())/1000 && j.endTime >= parseInt(msNow.getTime()/1000)){
             console.log("MATCH FOUND");
             //make everything invisible
             var elArr = document.getElementsByTagName("*");
