@@ -10,25 +10,39 @@
 </head>   
 
 <body>
+    <p id="demo"></p>
     <input type= "text" placeholder="example.com">
     
     <input type="time" id="alarmTimeStart" />
-    <input type="time" id="alarmTimeEnd">
+    <input type="time" id="alarmTimeEnd" />
     
     <button onclick="setAlarm(this);" id = "alarmButton">Set Time</button>
     <script>
         function setAlarm() {
         var msStart = document.getElementById('alarmTimeStart').valueAsNumber;
         var msEnd = document.getElementById('alarmTimeEnd').valueAsNumber;
-        var msNow = Date.now();
-        console.log(msStart);
-        console.log(msEnd);
-        
+        var msNow = new Date();
+        if (msStart < msEnd){
+            msDiff = msEnd - msStart;
+            msDiffinhr = parseInt(msDiff / 3600000)%24;
+            msDiffinmin =parseInt(msDiff/60000)%60;
+            msDiffinsec = parseInt(msDiff/1000)%60;
+        }
+        if (msStart > msEnd){
+            msDiff = msStart - msEnd;
+            msDiffinhr = parseInt(msDiff / 3600000)%24;
+            msDiffinmin =parseInt(msDiff/60000)%60;
+            msDiffinsec = parseInt(msDiff/1000)%60;    
+        }
+        console.log(msDiffinhr);
+        console.log(msDiffinmin);
+        console.log(msDiffinsec);
+
         if(isNaN(msStart) || isNan(msEnd)) {
             alert('Error: Perhaps no input?');
             return;
         }
-        
+        document.getElementById("demo").innerHTML = msDiffinhr +"h" + msDIffinmin + "m";
         if(msStart == msNow){
             var alarmStart = new Date(msStart);
             var alarmEnd = new Date(msEnd);
@@ -45,6 +59,7 @@
         
     }
     </script>
+
 
     
 </body>
