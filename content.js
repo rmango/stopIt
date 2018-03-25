@@ -27,7 +27,8 @@ fetch(chrome.extension.getURL('/siteData.json'))
         if(matchFound) {
             console.log("MATCH FOUND");
             //make everything invisible
-            document.getElementsByTagName("BODY")[0].style.visibility = "hidden";
+            document.getElementsByTagName("*")[0].style.visibility = "hidden";
             //inject own code
+            //document.getElementsByTagName("BODY")[0].style.visibility = "visible";
         }
      });

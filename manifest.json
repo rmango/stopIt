@@ -20,7 +20,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "content.js"
+                "content.js", "siteData.json"
             ],
             "run_at": "document_end",
             "all_frames": true
