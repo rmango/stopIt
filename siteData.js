@@ -15,10 +15,3 @@ var siteData = [
         endTime: 9
     }
 ];
-// Send message to background:
-/*chrome.runtime.sendMessage(p, function(response) {
-    console.log(`message from background: ${JSON.stringify(response)}`);
-  });*/
-  /*document.addEventListener("hello", function(data) {
-    chrome.runtime.sendMessage("test");
-});*/

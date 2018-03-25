@@ -4,64 +4,20 @@
 <head>
     <title>Control Panel</title>
     <script src="siteData.js"></script>
-    <script src="background.js"></script>
-    <script>
-        //document.body.getElementById("list").setAttribute("background-color", blue);
-        var siteData = [
-            {
-                url: "https://github.com/rmango",
-                startTime: 18,
-                endTime: 3
-            },
-            {
-                url: "https://stackoverflow.com/questions/16503879/chrome-extension-how-to-open-a-link-in-new-tab",
-                startTime: 5,
-                endTime: 9
-            },
-            {
-                url: "https://developer.chrome.com/extensions/override",
-                startTime: 21,
-                endTime: 9
-            }
-        ];
-        document.getElementById("test").setAttribute("textContent", "hi");
-        /*
-        console.log(siteData);
-        for(var i = 0; i < siteData.length; i++) {
-            var siteEl = document.createElement("DIV");
-            siteEl.innerHTML = siteData[i].url;
-            document.getElementById("list").appendChild(siteEl);
-            console.log("element created");
-        }*/
-        /*chrome.extension.onRequest.addListener(
-            function(request, sender, sendResponse) {
-                console.log(sender.tab ?
-                            "from a content script:" + sender.tab.url :
-                            "from the extension");
-                if (request.greeting == "hello")
-                sendResponse({farewell: "goodbye"});
-                else
-                sendResponse({}); // snub them.
-            });*/
-    </script>
+    <script src="content.js"></script>
 </head>
 
-<body>
-    
+<body>  
+       
+  
     <h1>Control Panel</h1>
     <div id="list">
         <div>This is the list</div>
         <div>Add something to the list</div>
-        <div id="test"></div>
+        <div id="test">Hi</div>
     </div>
-    <script>
-            /*var go = function() {
-                var event = document.createEvent('Event');
-                event.initEvent('hello');
-                document.dispatchEvent(event);
-            }*/
-        </script>
-        <a href="javascript:go();">Click me</a>
+    
+    <script src="background.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
         "tabs"
     ],
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["siteData.js", "background.js", "content.js"]
     },
     "content_scripts": [
         {
