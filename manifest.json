@@ -3,14 +3,21 @@
     "version": "1.0",
     "description": "Blocks websites that you blacklist, and then suggests other things to do.",
     "permissions": [
-        "storage"
+        "storage",
+        "activeTab",
+        "tabs"
     ],
     "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": false
+        "scripts": ["background.js"]
     },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"],
+          "run_at": "document_end",
+          "all_frames": true
+        }
+      ],
     "browser_action": {
         "default_popup": "controlPage.html"
     },
