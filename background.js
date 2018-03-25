@@ -10,13 +10,6 @@ fetch(chrome.extension.getURL('/siteData.json'))
             console.log("element created");
         }
     });
-/*console.log(siteData);
-for(var k = 0; k < siteData.length; k++) {
-    var siteEl = document.createElement("DIV");
-    siteEl.innerHTML = siteData[k].url;
-    document.getElementById("list").appendChild(siteEl);
-    console.log("element created");
-}*/
     
    
 
